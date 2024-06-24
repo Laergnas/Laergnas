@@ -1,0 +1,107 @@
+/* styles.css */
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Old English Text MT', serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    margin: 0;
+}
+
+.subtitle {
+    position: absolute;
+    right: 10px;
+    font-size: 1em;
+    margin: 0;
+}
+
+.main-title {
+    text-align: left;
+    margin: 20px 10px;
+    font-size: 1.5em;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.article {
+    background-color: #333;
+    padding: 10px;
+    border: 1px solid #555;
+    width: calc(45%);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.lock-button {
+    position: fixed;
+    top: 20px; /* Cambiado de bottom a top */
+    right: 20px;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.creation-tools {
+    display: none;
+    position: fixed;
+    top: 80px; /* Cambiado de bottom a top */
+    right: 20px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+.creation-tools label,
+.creation-tools input,
+.creation-tools select,
+.creation-tools button {
+    display: block;
+    margin: 10px 0;
+}
+
+.creation-tools input,
+.creation-tools select,
+.creation-tools button {
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+}
+
+.delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}

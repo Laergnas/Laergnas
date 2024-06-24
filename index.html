@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laergnas</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase JS SDK -->
+    <script type="module">
+        // Importar las funciones necesarias de los SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+        import { getStorage } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-storage.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBEzEBKMz5RQdODMLJsfodKP5Q0qEjfwXA",
+            authDomain: "laergnas-18ee3.firebaseapp.com",
+            projectId: "laergnas-18ee3",
+            storageBucket: "laergnas-18ee3.appspot.com",
+            messagingSenderId: "408940585488",
+            appId: "1:408940585488:web:5b6d58c8396de20e956095",
+            measurementId: "G-Y7HHSC6887"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const storage = getStorage(app);
+        
+        // Hacer que el storage esté disponible globalmente para el script
+        window.firebaseStorage = storage;
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Laergnas</h1>
+        <h2 class="subtitle">444</h2>
+    </header>
+    <main>
+        <h2 class="main-title">Artículos</h2>
+        <div class="articles" id="articles"></div>
+    </main>
+    <footer>
+        <button class="lock-button" onclick="toggleCreationMode()">🔒</button>
+        <div id="creation-tools" class="creation-tools">
+            <form id="creation-form">
+                <label for="article-name">Nombre del artículo:</label>
+                <input type="text" id="article-name" name="article-name">
+                
+                <label for="article-price">Precio del artículo:</label>
+                <input type="text" id="article-price" name="article-price">
+                
+                <label for="article-category">Categoría del artículo:</label>
+                <select id="article-category" name="article-category">
+                    <option value="Hat">Hat</option>
+                    <option value="T-shirt">T-shirt</option>
+                    <option value="Short">Short</option>
+                    <option value="Pant">Pant</option>
+                </select>
+                
+                <label for="preorder">Categoría para preorder:</label>
+                <input type="checkbox" id="preorder" name="preorder">
+                
+                <label for="article-file">Agregar foto, video o archivo:</label>
+                <input type="file" id="article-file" name="article-file" accept="image/*,video/*,.pdf">
+                
+                <label for="preorder-link">Enlace para preorder:</label>
+                <input type="text" id="preorder-link" name="preorder-link">
+                
+                <button type="button" onclick="addArticle()">Agregar artículo</button>
+            </form>
+        </div>
+    </footer>
+
+    <script src="scripts.js" type="module"></script>
+</body>
+</html>
